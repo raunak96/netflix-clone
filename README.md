@@ -20,6 +20,8 @@
   - [7. Creating a Movies Table](#7-creating-a-movies-table)
   - [8. Insert Values in Movie table](#8-insert-values-in-movie-table)
   - [9. Retrieve values from Movie tables](#9-retrieve-values-from-movie-tables)
+  - [10. SetUp Netlify Serverless Functions](#10-setup-netlify-serverless-functions)
+    - [Steps to setup netlify functions](#steps-to-setup-netlify-functions)
 
 ## 1. Prerequisites
 
@@ -273,3 +275,12 @@ query getMovieAction {
     }
 }
 ```
+
+## 10. SetUp Netlify Serverless Functions
+> What are serverless functions?
+> 
+> `Serverless functions` open a world of possibilities for running on-demand, server-side code without having to run a dedicated server. In our case we use it to send graphql queries to Astra DB we setup earlier.
+
+  ### Steps to setup netlify functions
+  1. In root, make a [netlify.toml](netlify.toml) file which contains the configuration for the Netlify functions. In our case, have defined the build command and location of netlify functions. Apart from this, we have also set a redirect path. In our case, whenever a user hits `/api/:splat` they are redirected to the specified netlify function file for that url.
+  2. In root, make a directory which we specified in above file as location for our netlify functions. Here simply make a js file with our backend logic.
