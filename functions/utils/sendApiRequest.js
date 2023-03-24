@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 
 const url = process.env.ASTRA_GRAPHQL_ENDPOINT;
 
@@ -18,6 +18,17 @@ export const sendApiRequest = async query => {
 				},
 			}
 		);
+		if (data.errors)
+			throw new AxiosError(
+				data.errors?.[0]?.message || "Invalid Format",
+				"Forbidden",
+				{},
+				{},
+				{
+					status: 403,
+					data: data.errors?.[0]?.message || "Invalid Format",
+				}
+			);
 		return {
 			statusCode: 200,
 			body: JSON.stringify(data),
@@ -25,10 +36,10 @@ export const sendApiRequest = async query => {
 	} catch (e) {
 		console.error(e);
 		return {
-			statusCode: e.response.status || 500,
+			statusCode: e.response?.status || 500,
 			body: JSON.stringify({
 				error:
-					e.response.data ||
+					e.response?.data ||
 					e.request ||
 					e.message ||
 					"Internal Server Error",

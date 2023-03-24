@@ -1,7 +1,7 @@
 import { sendApiRequest } from "./utils/sendApiRequest";
 
 export const handler = async event => {
-	const genre = "Sci-Fi";
+	const genre = JSON.parse(event.body).genre;
 	const query = `
         query {
             movies_by_genre (value: { genre: ${JSON.stringify(

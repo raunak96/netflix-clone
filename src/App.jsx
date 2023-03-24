@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import useAxios from "@/hooks/useAxios";
 import Section from "./components/Section";
 
