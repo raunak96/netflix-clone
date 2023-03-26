@@ -6,4 +6,19 @@
 
 .movie-section{
     display: flex;
+
+    .more-button {
+            height: 100%;
+            display: flex;
+            padding: 40px 10px;
+            border-radius: 0 10px 10px 0;
+            background-color: red;
+        }
+}
+.card{
+    width: 200px;
+
+    video{
+        width: 100%;
+    }
 }

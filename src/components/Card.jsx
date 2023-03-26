@@ -6,7 +6,7 @@ import { number, shape, string } from "prop-types";
 const Card = ({ movie }) => {
 	const { duration, title, synopsis, thumbnail, year } = movie;
 	return (
-		<div>
+		<div className="card">
 			<h4>{title}</h4>
 			<h4>{duration}</h4>
 			<video controls>
