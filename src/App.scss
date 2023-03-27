@@ -26,7 +26,7 @@ body {
 
 		&:focus,
 		&:hover {
-			transform: scale(1.4);
+			transform: scale(1.5);
 			z-index: 1;
 			~ .card {
 				transform: translateX(25%);
@@ -35,6 +35,12 @@ body {
 
 		video {
 			width: 100%;
+		}
+		.info-box {
+			width: 100%;
+			z-index: 5;
+			padding: 10px;
+			text-align: center;
 		}
 	}
 
