@@ -5,6 +5,7 @@ import UseOnScreen from "@/hooks/useOnScreen";
 import Section from "@/components/Section";
 import NavBar from "@/components/Navbar";
 import { GENRE_LIMIT } from "@/utils";
+import HeroSection from "./components/HeroSection";
 
 const App = () => {
 	const [genres, setGenres] = useState([]);
@@ -33,6 +34,7 @@ const App = () => {
 	return (
 		<>
 			<NavBar />
+			<HeroSection />
 			{genres.length > 0 && (
 				<div className="container">
 					{genres.map((genre, ind) => (

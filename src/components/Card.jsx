@@ -13,11 +13,11 @@ const Card = ({ movie }) => {
 		<div
 			className="card"
 			onMouseEnter={() => {
-				videoRef.current.play();
+				videoRef.current?.play?.();
 				setShowInfo(true);
 			}}
 			onMouseLeave={() => {
-				videoRef.current.pause();
+				videoRef.current?.pause?.();
 				setShowInfo(false);
 			}}>
 			<video

@@ -8,3 +8,24 @@ export const getObjInPath = (obj, path) => {
 };
 
 export const GENRE_LIMIT = 5;
+
+export const getRandomGenre = () => {
+	const genres = [
+		"Action",
+		"Anime",
+		"Award-Winning",
+		"Children & Family",
+		"Comedies",
+		"Documentaries",
+		"Dramas",
+		"Fantasy",
+		"French",
+		"Horror",
+		"Independent",
+		"Music",
+		"Romance",
+		"Sci-Fi",
+		"Thriller",
+	];
+	return genres[Math.floor(Math.random() * genres.length)];
+};
