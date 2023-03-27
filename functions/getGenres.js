@@ -1,6 +1,6 @@
-import { sendApiRequest } from "./utils/sendApiRequest";
+const sendApiRequest = require("./utils/sendApiRequest");
 
-export const handler = async event => {
+exports.handler = async event => {
 	const body = JSON.parse(event.body);
 	const pageState = body.pageState || null;
 	const pageSize = body.pageSize || 4;

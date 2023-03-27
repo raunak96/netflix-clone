@@ -1,4 +1,5 @@
-import axios, { AxiosError } from "axios";
+const { default: axios } = require("axios");
+const AxiosError = axios.AxiosError;
 
 const url = process.env.ASTRA_GRAPHQL_ENDPOINT;
 
@@ -6,7 +7,7 @@ const url = process.env.ASTRA_GRAPHQL_ENDPOINT;
  *
  * @param {string} query graphql query
  */
-export const sendApiRequest = async query => {
+module.exports = async query => {
 	try {
 		const { data } = await axios.post(
 			url,
