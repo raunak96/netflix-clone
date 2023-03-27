@@ -3,6 +3,12 @@ body {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	background-color: #141414;
+	color: #fff;
+	font-family: "Helvetica Neue", sans-serif;
+}
+.container {
+	margin: 0 50px;
 }
 .page-end {
 	width: 100%;
@@ -11,18 +17,44 @@ body {
 .movie-section {
 	display: flex;
 
-	.more-button {
+	.card {
+		width: 230px;
+		border-radius: 5px;
+		margin: 2px;
+		position: relative;
+		transition: transform 500ms;
+
+		&:focus,
+		&:hover {
+			transform: scale(1.4);
+			z-index: 1;
+			~ .card {
+				transform: translateX(25%);
+			}
+		}
+
+		video {
+			width: 100%;
+		}
+	}
+
+	&:focus,
+	&:focus-within {
+		.card {
+			transform: translate(-25%);
+			z-index: 1;
+		}
+	}
+
+	button.more-button {
+		all: unset;
 		height: 100%;
 		display: flex;
 		padding: 40px 10px;
 		border-radius: 0 10px 10px 0;
-		background-color: red;
-	}
-}
-.card {
-	width: 200px;
 
-	video {
-		width: 100%;
+		&:hover {
+			background-color: rgba(255, 255, 255, 0.5);
+		}
 	}
 }

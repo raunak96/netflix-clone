@@ -1,9 +1,10 @@
 import "./App.scss";
-import useAxios from "@/hooks/useAxios";
-import Section from "@/components/Section";
 import { useEffect, useRef, useState } from "react";
+import useAxios from "@/hooks/useAxios";
+import UseOnScreen from "@/hooks/useOnScreen";
+import Section from "@/components/Section";
+import NavBar from "@/components/Navbar";
 import { GENRE_LIMIT } from "@/utils";
-import UseOnScreen from "./hooks/useOnScreen";
 
 const App = () => {
 	const [genres, setGenres] = useState([]);
@@ -31,8 +32,9 @@ const App = () => {
 
 	return (
 		<>
+			<NavBar />
 			{genres.length > 0 && (
-				<>
+				<div className="container">
 					{genres.map((genre, ind) => (
 						<Section
 							key={`${genre.value}-${ind}`}
@@ -42,7 +44,7 @@ const App = () => {
 					{!isLoading && (
 						<div className="page-end" ref={infiniteScrollRef} />
 					)}
-				</>
+				</div>
 			)}
 			{isLoading && <div>Loading...</div>}
 		</>

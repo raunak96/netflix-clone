@@ -9,7 +9,7 @@ const Card = ({ movie }) => {
 		<div className="card">
 			<h4>{title}</h4>
 			<h4>{duration}</h4>
-			<video controls>
+			<video className="video">
 				<source src={thumbnail} type="video/mp4" />
 			</video>
 		</div>

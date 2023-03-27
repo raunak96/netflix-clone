@@ -25,7 +25,7 @@ const Section = ({ genre }) => {
 
 	return (
 		<section>
-			<div>{genre}</div>
+			<h2 id={genre}>{genre}</h2>
 			{movies && movies.length > 0 && (
 				<div className="movie-section">
 					{movies.map((movie, index) => (
@@ -38,7 +38,9 @@ const Section = ({ genre }) => {
 								getMovies({
 									payloadBody: { pageState: nextPageState },
 								});
-							}}></button>
+							}}>
+							<i className="fas fa-angle-right"></i>
+						</button>
 					)}
 				</div>
 			)}
