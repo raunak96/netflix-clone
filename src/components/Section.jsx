@@ -18,13 +18,13 @@ const Section = ({ genre }) => {
 		{ responsePath: ["data", "movies_by_genre"] }
 	);
 
-	if (isLoading) return <div>Loading...</div>;
+	if (isLoading) return <div style={{ height: "250px" }}>Loading...</div>;
 	if (error) return <div>Error {JSON.stringify(error)}</div>;
 
 	const { values: movies, pageState: nextPageState } = data;
 
 	return (
-		<>
+		<section>
 			<div>{genre}</div>
 			{movies && movies.length > 0 && (
 				<div className="movie-section">
@@ -42,7 +42,7 @@ const Section = ({ genre }) => {
 					)}
 				</div>
 			)}
-		</>
+		</section>
 	);
 };
 
